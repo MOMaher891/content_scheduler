@@ -21,46 +21,49 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+# Social Media Post Manager
+
+A comprehensive Laravel-based social media management platform that allows users to create, schedule, and publish posts across multiple social media platforms from a single dashboard.
+
+## Key Features
+
+- **Unified Dashboard**: Monitor post statistics and scheduled content at a glance with visual graphs
+- **Multi-Platform Support**: Connect and manage multiple social media accounts in one place
+- **Post Scheduling**: Create posts in advance and schedule them for automatic publishing
+- **Content Management**: Draft, schedule, and publish posts with rich content support including images
+- **Automated Publishing**: Background jobs automatically publish scheduled posts at their designated times
+- **Advanced Filtering**: Filter posts by status (draft, scheduled, published) and date ranges
+- **Real-time Statistics**: Track post performance with dynamic, visual representations
+
+## Technical Stack
+
+- **Framework**: Laravel 10
+- **Frontend**: Livewire, Alpine.js, Tailwind CSS
+- **Visualization**: ApexCharts for data visualization
+- **Authentication**: Laravel Breeze
+- **Background Processing**: Laravel Jobs and Scheduler
+
+## Getting Started
+
+1. Clone the repository
+2. Run `composer install`
+3. Run `npm install && npm run dev`
+4. Configure your database in `.env`
+5. Run migrations with `php artisan migrate`
+6. Start the scheduler with `php artisan schedule:run`
+7. Access the application at `http://localhost:8000`
+
+## Scheduler Setup
+
+To ensure scheduled posts are published automatically, add the following to your server's crontab:
+
+```
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+```
+
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the LICENSE file for details.
